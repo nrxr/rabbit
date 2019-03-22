@@ -16,6 +16,7 @@ Setting up a publisher
         publisher.Server(srv),
         publisher.Exchange(exch),
         publisher.PublishingTemplate(pubtpl),
+        publisher.RoutingKey("us.nyse.amd"),
     )
 
     err = pub.Send([]byte("message"))
@@ -29,8 +30,8 @@ to a exchange. Optionally you can set Qos values for setting the prefetch size.
  srv, _ := server.New(server.Address(rabbitserver))
  xch := exchange.New("stocks")
  q := queue.New(
-	 quque.Name("us:nyse:amd"),
-	 queue.AddBinding(queue.Binding{Key: "us:nyse:amd"}),
+	 quque.Name("us.nyse.amd"),
+	 queue.AddBinding(queue.Binding{Key. "us.nyse.amd"}),
 	 queue.Durable(),
  )
  cns, _ := consumer.New(
@@ -40,10 +41,10 @@ to a exchange. Optionally you can set Qos values for setting the prefetch size.
 	 consumer.Qos(1),
  )
 
- amqclosed := server.NotifyClose()
+ amqclosed := srv.NotifyClose()
  go func() {
 	 msgs := con.Subscribe()
-	 for server.Loop() {
+	 for srv.Loop() {
 		 select {
 		 case msg := <-msgs:
 			 // Do things...

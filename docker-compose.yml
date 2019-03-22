@@ -1,0 +1,7 @@
+version: '3'
+services:
+   rabbitmq:
+    image: rabbitmq:alpine
+    ports:
+      - "127.0.0.1:5671:5671"
+      - "127.0.0.1:5672:5672"

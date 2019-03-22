@@ -1,0 +1,5 @@
+github.com/nrxr/maskpass v1.0.0 h1:XUVPhaEkr42iT9jn7F4LHqzoyLfz8mceebMFU1a8aM0=
+github.com/nrxr/maskpass v1.0.0/go.mod h1:3AjW2uX6+GmpaLzuRgDjEk5yfisJseZREy7I9mtKrsA=
+github.com/nrxr/meth v1.1.0 h1:n156Iz2FA1vKcDn7QZOMXX7Ydfs+hYuHmo9j7b/oGiM=
+github.com/streadway/amqp v0.0.0-20190312223743-14f78b41ce6d h1:ToACqFOOYVdz7PswtVcAawttvtdGlLhoAsXdhYFQeEI=
+github.com/streadway/amqp v0.0.0-20190312223743-14f78b41ce6d/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=

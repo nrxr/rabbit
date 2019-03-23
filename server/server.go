@@ -91,7 +91,7 @@ type Option func(*Server) error
 func Address(addr string) Option {
 	return func(r *Server) error {
 		if addr == "" {
-			return fmt.Errorf("rabbit/server: Address passed is empty")
+			return nil
 		}
 
 		r.addr = addr

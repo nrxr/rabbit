@@ -308,3 +308,14 @@ func (c *Consumer) validate() error {
 
 	return nil
 }
+
+// RoutingKeys returns a slice of all the routing keys being used against the
+// queue in this consumer.
+func (c *Consumer) RoutingKeys() []string {
+	rk := []string{}
+	for _, b := range c.queue.Bindings {
+		rk = append(rk, b.Key)
+	}
+
+	return rk
+}

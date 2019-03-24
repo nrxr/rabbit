@@ -171,6 +171,12 @@ func (p *Publisher) validate() error {
 	return nil
 }
 
+// RoutingKey returns the routing key to which is publishing against the
+// exchange.
+func (p *Publisher) RoutingKey() string {
+	return p.routingKey
+}
+
 // Send returns an error if something goes wrong while publishing. If it's
 // awaiting for a reconnection then it will block until either a reconnection
 // succeeds or a close notification is sent, in which case it will return the

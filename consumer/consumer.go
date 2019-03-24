@@ -199,14 +199,21 @@ func (c *Consumer) consume() error {
 }
 
 func (c *Consumer) serve() {
+	closing := c.server.NotifyClose()
 	for c.server.Loop() {
 		select {
 		case d := <-c.messages:
 			for _, ch := range c.listeners {
 				ch <- d
 			}
+		case <-closing:
+			c.Close()
 		}
 	}
+}
+
+func (c *Consumer) Close() {
+	c.channel.Close()
 }
 
 func (c *Consumer) Subscribe() <-chan amqp.Delivery {

@@ -216,3 +216,8 @@ func (p *Publisher) Send(body []byte) error {
 		pub,
 	)
 }
+
+// Close will call the method Close against the *amqp.Channel.
+func (p *Publisher) Close() {
+	p.channel.Close()
+}
